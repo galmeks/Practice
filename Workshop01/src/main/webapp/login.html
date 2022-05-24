@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>로그인 창</title>
+</head>
+<body>
+	<form id=frmLogin method=get action=login encType='Utf-8'>
+		아이디:<input type=text name=user_id><br>
+		비밀번호:<input type=password name=user_pw><br><!-- input/select/textarea -->
+		<input type=submit value='로그인'><input type=reset value='다시입력'><br>
+		<!--관심분야:<input type=checkbox name=subject value=java>자바
+		<input type=checkbox name=subject value=jQuery>jQuery
+		<input type=checkbox name=subject value=python>파이썬<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type=checkbox name=subject value=javascript>자바스크립트
+		<input type=checkbox name=subject value=php>PHP
+		<input type=checkbox name=subject value=C++>C++<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type=checkbox name=subject value=PL/SQL>PL/SQL
+		<input type=checkbox name=subject value=Django>장고
+		<input type=checkbox name=subject value=pascal>파스칼<br>-->
+	</form>
+</body>
+<script src='https://code.jquery.com/jquery-3.6.0.js'></script>
+<script>
+$(document)
+.on('submit','#frmLogin',function(){
+	let userid=$('input[name=user_id]').val();
+	console.log('userid['+userid+']');
+	let passwd=$('input[name=user_pw]').val();
+	console.log('userpw['+userid.indexOf(' ')+']');
+	if(userid=='' || userid==null || userid.indexOf(' ')>-1){
+		alert('유저아이디가 유효하지 않습니다.') 
+		return false;
+	}
+	if(passwd=='' || passwd==null || passwd.indexOf(' ')>-1){
+		alert('유저아이디가 유효하지 않습니다.');
+		return false;
+	}
+	return true;
+
+})
+</script>
+</html>

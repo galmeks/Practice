@@ -1,0 +1,28 @@
+.right{
+    text-align: right;
+    vertical-align: middle;
+}
+#signUp{
+    font-family: 'Nanum Gothic Coding', monospace;
+    text-align: center;
+    background-color: rgb(72, 73, 82);
+    font-size: x-large; 
+    color: aliceblue;
+}
+#flexCheckDefault:checked ,#flexRadioDefault1:checked{
+    background-color: #2fd3d3;
+    border-color: rgb(255, 255, 255);
+}
+#btn:hover{
+    background-color:rgb(76, 161, 241);
+    border-color: aliceblue;
+}
+#btn{
+    color: rgb(63, 61, 61);
+}
+td, tr{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+#btn_cell{
+    background-color:#eeeedf;
+}
