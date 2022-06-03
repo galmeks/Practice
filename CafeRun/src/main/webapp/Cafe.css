@@ -1,0 +1,44 @@
+td table{
+    border-collapse: collapse;
+    border: solid rgb(129, 108, 12);
+    background-color: rgb(209, 172, 80);
+    width: 400px;height: 880px; text-align: center;
+}
+/* td{
+    border:solid green;
+} */
+button{
+    width: 100px;height: 40px;font-size: large;
+}
+#Result option{
+    font-family: 'Hi Melody', cursive;
+    font-size: medium;
+}
+select{
+    width: 360px;
+    height: 600px;
+    text-align-last: justify;
+    border: yellow;
+    background-color:palegoldenrod;
+}
+option{
+    font-family: 'Hi Melody', cursive;
+    font-size: xx-large;
+}
+.index{
+    font-family: 'Jua', sans-serif;
+    font-size: xx-large;
+}
+label{
+    vertical-align:bottom; font-size: x-large;
+}
+.Gl{
+    font-size: large;
+}
+._btn{
+    width: 80px;height: 35px;
+}
+#M_list option{
+    font-family: 'Hi Melody', cursive;
+    font-size: x-large;
+}

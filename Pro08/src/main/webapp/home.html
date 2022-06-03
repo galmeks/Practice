@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Member Management</title>
+</head>
+<body align=center>
+<h1>수출품목 관리</h1>
+<table align=center border=1>
+<tr><td>Country</td><td><input type=text name=id id=country><input type=hidden id=opflag></td></tr>
+<tr><td>Seq No.</td><td><input type=text name=password id=seqno></td></tr>
+<tr><td>Good name</td><td><input type=text name=name id=goodname></td></tr>
+<tr><td colspan=2 align=center><input type=submit value=AddNew id=btnAddnew>
+<input type=button id=btnReset value=비우기></td></tr>
+</table>
+<table id=tblData border=1 align=center>
+</table>
+<script src='https://code.jquery.com/jquery-3.4.1.js'></script>
+<script>
+$(document)
+.ready(function(){
+	sel();
+})
+.on('click','#btnDel',function(){
+	$.ajax({
+		type:'get',
+		url:'del',
+		data:'country='+$(this).parent().parent().find('td:eq(0)').text()
+			+'&seqno='+$(this).parent().parent().find('td:eq(1)').text()
+			+'&name='+$(this).parent().parent().find('td:eq(2)').text(),
+		dataType:'text',
+		success:function(){
+			sel();
+			$('#btnReset').trigger('click');
+		}
+	})
+})
+.on('click','#tblData tr',function(){
+	let country = $(this).find('td:eq(0)').text();
+	let seq = $(this).find('td:eq(1)').text();
+	let name = $(this).find('td:eq(2)').text()
+	$('#country').val(country);
+	$('#seqno').val(seq);
+	$('#goodname').val(name);
+	$('#btnAddnew').val('Update')
+	
+})
+.on('click','#btnReset',function(){
+	$('#country').val('');
+	$('#seqno').val('');
+	$('#goodname').val('');
+	$('#btnAddnew').val('AddNew')
+	
+})
+.on('click','#btnAddnew',function(){
+	$.ajax({
+		type:'get',
+		url:'insert',
+		data:'country='+$('#country').val()+'&seqno='+$('#seqno').val()+'&name='+$('#goodname').val(),
+		dataType:'text',
+		success:function(){
+			sel();
+		},
+		error:{
+		},
+		complete:{
+		}
+	});
+})
+
+function sel(){
+	$.ajax({
+		type:'get',
+		url:'select',
+		dataType:'text',
+		success:function(Data){
+			$('#tblData').empty().append(Data)
+		},
+		error:function(){
+		},
+		complete:function(){
+		}
+	});
+}
+</script>
