@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.test.myapp01.iEmployee">
+<select id="listEmployees" resultType="com.test.myapp01.empDTO">
+	select employee_id,emp_name,salary,manager_id from employees order by employee_id
+</select>
+<insert id="addEmployee">
+	insert into employees value(#{param1},#{param2},#{param3})
+</insert>
+<delete id="removeEmployee">
+	delete from employees where employee_id=${param1}
+</delete>
+<select id="getMember" resultType="com.test.myapp01.Member">
+	select a.employee_id,a.emp_name,a.salary,a.manager_id,b.emp_name manager_name,to_char(a.hire_date,'YYYY-MM-DD') hire_date,a.email 
+	from employees a,employees b
+	where a.employee_id=#{param1}
+	and a.manager_id = b.employee_id(+)
+</select>
+<select id="countMember" resultType="int">
+	select Count(*) cnt from employees where manager_id=#{param1}
+</select>
+</mapper>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.test.myapp01.iAddMember">
+<insert id="insert">
+	insert into t_member values(#{param1},#{param2},#{param3},#{param4},to_char(sysdate,'YYYY-MM-DD'))
+</insert>
+<select id="listM" resultType="com.test.myapp01.t_Member">
+	select id,pwd,name,mobile,joindate from t_member
+</select>
+</mapper>
