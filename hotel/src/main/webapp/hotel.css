@@ -1,0 +1,62 @@
+@charset "UTF-8";
+    table{
+        width: 400px;
+        height: 720px;
+    }
+    td table{
+        background-color: burlywood;
+    }
+    /* td{
+        border: solid green;
+    } */
+    option{
+        text-align-last:justify
+    }
+    input{
+        
+        height: 30px;
+    }
+    .subMenu{
+        vertical-align: middle;
+        font-size: larger;
+        font-weight: 600;
+    }
+    .right{
+        text-align: right;
+    }
+    .sel1{
+        height: 30px;
+    }
+    .text2{
+        width: 120px;
+    }
+    .sel_wid1{
+        width: 340px;
+        background-color: antiquewhite;
+    }
+    .sel2{
+        width: 340px;
+        font-size: larger;
+        background-color: antiquewhite;
+    }
+    #btn_rsv input,#btn_edit input,#btn_srch input{
+        border-color: black;
+        height: 40px;
+        width: 90px;
+    }
+    
+    #Menu a{
+        font-size: x-large;
+        font-weight: 800;
+        text-decoration-line: none;
+    }
+    #Menu .nonsel{
+        color: azure;
+    }
+/* 	#reservList option{  */
+/*         font-size: smaller; */
+/* 	}  */
+    .selected{
+        background-color:white;
+        color: black;
+    }
